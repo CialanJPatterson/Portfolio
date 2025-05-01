@@ -97,7 +97,6 @@
         left:0px;
         width:100%;
         vertical-align: super;
-        opacity: 60%;
         z-index:6;
     }
 </style>

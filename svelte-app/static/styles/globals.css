@@ -5,12 +5,13 @@
 
 body {
     background-color: #b57878;
+    text-align: center;
 }
 
 div.gallery-links {
     display:inline-flex;
     position:absolute;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     float:left;
     left:2vw;
     bottom: var(--footer-height);
@@ -65,4 +66,18 @@ div#gallery-link {
     right:2vw;
     bottom:0px;
     z-index:0;
+}
+
+div.gallery * img {
+    content:url("/gallery-closed.png");
+}
+
+div.gallery:hover * img {
+    content:url("/gallery-open.png");
+}
+
+div.gallery {
+    background-color: red;
+    width:fit-content;
+    height:fit-content;
 }

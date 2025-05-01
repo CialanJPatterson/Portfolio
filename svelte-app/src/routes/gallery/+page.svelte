@@ -1,6 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Source Code: <a href="https://github.com/CialanJPatterson/Portfolio">GitHub</a></p>
+<script>
+    import { ArtPiece, Carousel } from "$lib";
+</script>
 
-<a href="/">HOME</a>
-<a href="/animation">ANIMATION</a>
-<a href="/art">ART</a>
+<h1>Gallery</h1>
+
+<div id="gallery-carousel">
+    <Carousel />
+</div>
