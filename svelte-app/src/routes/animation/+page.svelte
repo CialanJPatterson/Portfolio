@@ -2,8 +2,13 @@
     import { ImgLink } from "$lib";
 </script>
 <h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<p>Source Code: <a href="https://github.com/CialanJPatterson/Portfolio">GitHub</a></p>
 
 <a href="/">HOME</a>
 <a href="/art">ART</a>
-<ImgLink title="GALLERY" link="/gallery" size=200px/>
+<br>
+<div class="gallery-links">
+    <div id="gallery-link">
+        <ImgLink title="GALLERY" link="/gallery" size=20vw targetFontSize= 3.5vw/>
+    </div>
+</div>

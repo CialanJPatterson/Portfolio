@@ -8,14 +8,14 @@
 
 <style>
     footer{
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    text-align: center;
-    height: 45px;
-    padding-top: 10px;
-    position:fixed;
-    bottom:0;
-    width:100%;
-    z-index: 3;
-}
+        background-color: #b1b2b5bb;
+        color: var(--text-color);
+        text-align: center;
+        height: var(--footer-height);
+        position:fixed;
+        left:0px;
+        bottom:0;
+        width:100%;
+        z-index: 10;
+    }
 </style>

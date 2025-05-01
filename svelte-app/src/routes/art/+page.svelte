@@ -2,16 +2,21 @@
     import { ImgLink } from "$lib";
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<div class="gallery-links">
+    <div id="gallery-big-links">
+        <ImgLink title="3-D" link="/gallery" size=28vw targetFontSize=7vw/>
+        <ImgLink title="2-D" link="/gallery" size=28vw targetFontSize=7vw/>
+    </div>
+    <div id="gallery-small-links">
+        <ImgLink title="PHOTOGRAPHY" icon="/Placeholder.png" link="/gallery" size=13vw targetFontSize=1.2vw/>
+        <ImgLink title="PIXEL ART" link="/gallery" size=13vw targetFontSize=1.2vw/>
+        <ImgLink title="PAINTINGS" link="/gallery" size=13vw targetFontSize=1.2vw/>
+        <ImgLink title="SCULPTURE" link="/gallery" size=13vw targetFontSize=1.2vw/>
+    </div>
+    <div id="gallery-link">
+        <ImgLink title="GALLERY" link="/gallery" size=20vw targetFontSize= 3.5vw/>
+    </div>
+</div>
 
-<a href="/">HOME</a>
-<a href="/animation">ANIMATION</a>
-
-<ImgLink title="3-D" link="/gallery" size=200px/>
-<ImgLink title="2-D" link="/gallery" size=200px/>
-<ImgLink title="PHOTOGRAPHY" link="/gallery"/>
-<ImgLink title="PIXEL" link="/gallery"/>
-<ImgLink title="PAINTING" link="/gallery"/>
-<ImgLink title="SCULPTURE" link="/gallery"/>
-<ImgLink title="GALLERY" link="/gallery" size=200px/>
+<style>
+</style>
