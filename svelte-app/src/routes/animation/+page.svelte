@@ -7,6 +7,6 @@
 <a href="/">HOME</a>
 <a href="/art">ART</a>
 <br>
-<div class="gallery">
+<div id="animation-gallery-link" class="gallery">
     <ImgLink title="GALLERY" link="/gallery" size=20vw targetFontSize= 3.5vw/>
 </div>

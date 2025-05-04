@@ -1,6 +1,7 @@
 <script>
-import { Footer } from "$lib";
-let { children } = $props();
+    import { Footer } from "$lib";
+
+    let { children } = $props();
 
 </script>
 

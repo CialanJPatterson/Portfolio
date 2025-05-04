@@ -1,24 +1,39 @@
 <script>
-    export let title = "Page Link";
+    import { onMount } from "svelte";
+    export let title = "";
     export let link = "/error";
     export let size = "30vw"; // expressed as a percentage of the view width
     export let icon = "/favicon.png";
     export let bg = "indigo";
     export let targetFontSize = "1vw";
-    export let fontSize = sizeText(title, parseInt(size), parseFloat(targetFontSize));
+    export let fontSize = targetFontSize;
+    export let hasTitle = true;
+    let visible = "hidden";
+    onMount(() => {
+        if (title === "") hasTitle = false;
+        fontSize = sizeText(title, size, parseFloat(targetFontSize));
+        visible = "visible";
+    })
 </script>
 
 <script module>
     /**
      * Resizes text to fit into textbox
      * @param text{String} text to be resized
-     * @param des{Number} desired width relative to viewport
+     * @param des{String} desired width relative to viewport
      * @param target{Number} desired font size relative to viewport
      */
     function sizeText(text, des, target) {
         if (text == ""){
-            return 0;
+            return "0vw";
         }
+        
+        if (des.startsWith("var(")){
+            const temp = des.slice(4, des.length-1);
+            des = window.getComputedStyle(document.body).getPropertyValue(temp);
+        }
+        const fUnit = des.substring(des.length - 2);
+        const size = parseInt(des);
         let fSize = 0;
         let numChar = text.length;
         for (let i = numChar - 1; i > -1; i--) {
@@ -30,7 +45,7 @@
                 numChar -= 0.45;
             }
         }
-        const maxSize = des * 0.85;
+        const maxSize = size * 0.85;
         if (numChar * target < maxSize ) {
             const returnString = target + "vw";
             return returnString;
@@ -38,18 +53,20 @@
         else while (numChar * fSize < maxSize) {
             fSize += 0.001;
         }
-        const returnString = fSize + "vw";
+        const returnString = fSize + fUnit;
         return returnString;
     }
 </script>
 
-<div class="super" style="width:{size}; height:{size};">
+<div class="super" style="width:{size}; height:{size}; visibility:{visible}">
   <a href={link}>
     <div class="container" style="background-color:{bg}; width:{size}; height:{size}; font-size:{fontSize};">
         <div class="textbox-wrapper" style="width:{size}; height:{size}">
-            <div class="textbox">
-                <h2>{title}</h2>
-        </div>
+            {#if hasTitle}
+                <div class="textbox">
+                    <h2>{title}</h2>
+                </div>
+            {/if}
             <img src={icon} alt={title}>
         </div>
     </div>
@@ -78,15 +95,14 @@
     }
     div.textbox {
         align-content:center;
-        min-height: fit-content;
-        height:20%;
+        height: fit-content;
+        min-height:20%;
         display: block;
         z-index:7;
         width:100%;
         background-color: #0005;
     }
     h2 {
-        min-height:20%;
         padding:0px;
         margin:0px;
         color:var(--white-text);

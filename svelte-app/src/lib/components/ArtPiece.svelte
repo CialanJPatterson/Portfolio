@@ -23,11 +23,11 @@
 
 {#if poppedout}
 <div class="pop">
-    <img src={source} onclick={() => popout(index)} style="width:{size};" alt={title}>
+    <button onclick={() => popout(index)}><img src={source} style="width:100%;" alt={title}></button>
 </div>
 {:else}
 <div class="unpop">
-    <img src={source} onclick={() => popout(index)} style="width:100%;" alt={title}>
+    <button onclick={() => popout(index)}><img src={source} style="width:100%;" alt={title}></button>
 </div>
 {/if}
 
@@ -35,22 +35,35 @@
     div {
         display:inline;
         width:fit-content;
-        background-color: aqua;
         padding:0px;
         margin:0px;
     }
     div.unpop {
+        position: relative;
         width:100%;
         height:fit-content;
-        float:inline-end;
         z-index:2;
     }
     div.pop {
         position:sticky;
-        float:inline-start;
         right:0px;
         top:0px;
+        bottom:0px;
         width:300%;
         z-index:4;
+    }
+    div button {
+        width: 100%;
+        min-height:fit-content;
+        max-height: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+    @media (min-width: 769px) {
+        div.pop {
+            position:fixed;
+            width:40vw;
+            left:55vw;
+        }
     }
 </style>

@@ -1,9 +1,11 @@
 <script>
-
+    import { ImgLink } from "$lib";
 </script>
 
 <footer>
-    <p>©2025 Cialan Patterson. Creative Commons Attribution Share-Alike 4.0 International</p>
+    <div class="home-link">
+        <ImgLink title="" link="/" size="var(--footer-icon-width)" targetFontSize=3.5vw/>
+    </div>
 </footer>
 
 <style>
@@ -16,6 +18,9 @@
         left:0px;
         bottom:0;
         width:100%;
-        z-index: 10;
+        z-index: 9;
+    }
+    div.home-link{
+        position:absolute;
     }
 </style>

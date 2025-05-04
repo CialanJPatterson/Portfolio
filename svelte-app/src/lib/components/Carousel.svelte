@@ -1,5 +1,6 @@
 <script>
     import { ArtPiece } from "$lib";
+    import { MediaQuery } from "svelte/reactivity";
 
     /**
 	 * @type {any[]}
@@ -20,7 +21,6 @@
      * @param index{Number}
      */
     function closeAll(index){
-        
         for (let i = 0; i < artArray.length; i++) {
             if (index == i && artArray[i].popped == false){
                 artArray[i].open();
@@ -54,5 +54,10 @@
         height:fit-content;
         max-height: 80vh;
         border: 1px solid black;
+        @media (min-width: 769px) {
+            max-height:calc(100vh - var(--footer-height));
+            width:50%;
+        }
     }
+    
 </style>
