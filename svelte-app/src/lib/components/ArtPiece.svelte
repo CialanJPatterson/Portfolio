@@ -1,4 +1,5 @@
 <script>
+    import { base } from "$app/paths";
     let { 
         index = $bindable(),
         title = "art work", 
@@ -24,13 +25,13 @@
 
 {#if poppedout == true}
 <div class="pop">
-    <button onclick={() => popout(index)} tabindex=-1><img src={source} style="width:100%;" alt={title}></button>
+    <button onclick={() => popout(index)} tabindex=-1><img src="{base}{source}" style="width:100%;" alt={title}></button>
     <button onclick={() => popout(index)} tabindex=0><h1>X</h1></button>
     <div class="background"></div>
 </div>
 {:else}
 <div class="unpop">
-    <button onclick={() => popout(index)}><img src={source} style="width:100%;" alt={title}></button>
+    <button onclick={() => popout(index)}><img src="{base}{source}" style="width:100%;" alt={title}></button>
     <div class="background"></div>
 </div>
 {/if}

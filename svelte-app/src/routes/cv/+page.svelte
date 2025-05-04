@@ -3,6 +3,7 @@
 </svelte:head>
 
 <script>
+    import { base } from "$app/paths";
 	let rootElement;
 	$: rootElement && rootElement.style.setProperty('--bg-colour', `#bbc`);
 </script>
@@ -10,7 +11,7 @@
 <div class="container" bind:this={rootElement}>
     <h1>Here will be a pdf of the CV</h1>
     <br>
-    <a href="/">BACK</a>
+    <a href="{base}/">BACK</a>
 </div>
 
 <style>

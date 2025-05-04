@@ -3,17 +3,15 @@
 </svelte:head>
 
 <script>
+    import { base } from "$app/paths";
     import { ImgLink } from "$lib";
     let rootElement;
 	$: rootElement && rootElement.style.setProperty('--bg-colour', `#623e96`);
 </script>
 
 <div class="container" bind:this={rootElement}>
-    <h1>Welcome to SvelteKit</h1>
-    <p>Source Code: <a href="https://github.com/CialanJPatterson/Portfolio">GitHub</a></p>
-
-    <a href="/">HOME</a>
-    <a href="/art">ART</a>
+    <a href="{base}/">HOME</a>
+    <a href="{base}/art">ART</a>
     <br>
 
     <div id="animation-gallery-link" class="gallery">

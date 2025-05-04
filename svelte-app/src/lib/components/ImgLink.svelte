@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import { base } from "$app/paths";
     export let title = "";
     export let link = "/error";
     export let size = "30vw"; // expressed as a percentage of the view width
@@ -59,7 +60,7 @@
 </script>
 
 <div class="super" style="width:{size}; height:{size}; visibility:{visible}">
-  <a href={link}>
+  <a href="{base}{link}">
     <div class="container" style="background-color:{bg}; width:{size}; height:{size}; font-size:{fontSize};">
         <div class="textbox-wrapper" style="width:{size}; height:{size}">
             {#if hasTitle}
@@ -67,7 +68,7 @@
                     <h2>{title}</h2>
                 </div>
             {/if}
-            <img src={icon} alt={title}>
+            <img src="{base}{icon}" alt={title}>
         </div>
     </div>
   </a>

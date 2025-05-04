@@ -1,4 +1,5 @@
 <script>
+    import { base } from "$app/paths";
     let { 
         icon = "/placeholder.png",
         altText = "placeholder",
@@ -10,7 +11,7 @@
 </script>
 
 <div class="outer">
-    <img src={icon} alt={altText}>
+    <img src="{base}{icon}" alt={altText}>
     <div class="inner">
         <h3>{title}</h3>
         <a href={link}>{jam}</a>

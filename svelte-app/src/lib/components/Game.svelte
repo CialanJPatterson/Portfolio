@@ -1,4 +1,5 @@
 <script>
+    import { base } from "$app/paths";
     let { 
         title = "game", 
         source = "/placeholder.png", 
@@ -11,7 +12,7 @@
 </script>
 
 <div>
-    <button onclick={gotoLink}><img src={source} alt={title} style="width:20vh"></button>
+    <button onclick={gotoLink}><img src="{base}{source}" alt={title} style="width:20vh"></button>
 </div>
 
 <style>

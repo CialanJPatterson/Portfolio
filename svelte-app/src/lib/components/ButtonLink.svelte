@@ -1,4 +1,5 @@
 <script>
+    import { base } from "$app/paths";
 	import { goto } from "$app/navigation";
 
     import { onMount } from "svelte";
@@ -21,7 +22,7 @@
     })
     function nav(){
         if (link.startsWith("/")){
-            goto(link);
+            goto(`${base}${link}`);
         }
         else {
             window.location.href = link;
@@ -82,12 +83,12 @@
 </script>
 
 <div class="super" style="width:{width}; height:{height}; visibility:{visible}">
-        <button on:click={nav} class="container" style="background-color:{bg}; width:{width}; height:{height}; font-size:{fontSize};">
-            <div style="width:{parseInt(width) - parseInt(iconSize) + "vw"};">
-                <h2 style="color:{textColour}">{title}</h2>
-            </div>
-            <img src={icon} alt={title} style="width:{iconSize};">
-        </button>
+    <button on:click={nav} class="container" style="background-color:{bg}; width:{width}; height:{height}; font-size:{fontSize};">
+        <div style="width:{parseInt(width) - parseInt(iconSize) + "vw"};">
+            <h2 style="color:{textColour}">{title}</h2>
+        </div>
+        <img src="{base}{icon}" alt={title} style="width:{iconSize};">
+    </button>
 </div>
 
 <style>
