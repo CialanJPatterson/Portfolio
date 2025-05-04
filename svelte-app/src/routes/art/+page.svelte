@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>My Art</title>
+</svelte:head>
+
 <script>
     import { ImgLink } from "$lib";
 </script>

@@ -2,6 +2,9 @@
     import { ArtPiece } from "$lib";
     import { MediaQuery } from "svelte/reactivity";
 
+    const desktop = new MediaQuery("min-width:769px");
+    export let scrollDiv = "90%";
+
     /**
 	 * @type {any[]}
 	 */
@@ -22,12 +25,20 @@
      */
     function closeAll(index){
         for (let i = 0; i < artArray.length; i++) {
-            if (index == i && artArray[i].popped == false){
-                artArray[i].open();
-            }
+            if (index == i){
+                if (artArray[i].popped == false) {
+                    artArray[i].open();
+                    scrollDiv = "50%";
+                }
+                else{
+                    artArray[i].close();
+                    scrollDiv = "90%";
+                }
+            }                
             else {
                 artArray[i].close();
             }
+
         }
     }
 
@@ -36,28 +47,24 @@
     }
 </script>
 
-<table class="scrollable" style="">
+<grid class="scrollable" style="width:{desktop.current ? scrollDiv : "90%"};grid-template-columns:{desktop.current && scrollDiv == "90%" ? 'repeat(5, auto)' : 'repeat(3, auto)'}">
     {#each artArray as artPiece}
         <ArtPiece bind:index={artPiece.index} bind:poppedout={artPiece.popped} bind:open={artPiece.open} bind:close={artPiece.close} popout={(/** @type {number} */ i) => closeAll(i)}/>
     {/each}
-</table>
+</grid>
 
 <style>
-    table.scrollable {
+    grid.scrollable {
         position:absolute;
         bottom:var(--footer-height);
         left:5%;
         display:grid;
-        grid-template-columns: auto auto auto;
-        width:90%;
         overflow: hidden scroll;
         height:fit-content;
-        max-height: 80vh;
+        max-height: calc(98vh - var(--footer-height));
         border: 1px solid black;
         @media (min-width: 769px) {
             max-height:calc(100vh - var(--footer-height));
-            width:50%;
         }
     }
-    
 </style>

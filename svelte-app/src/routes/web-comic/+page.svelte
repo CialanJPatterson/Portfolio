@@ -1,7 +1,6 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Source Code: <a href="https://github.com/CialanJPatterson/Portfolio">GitHub</a></p>
+<svelte:head>
+    <title>Redirecting to Webcomic</title>
+</svelte:head>
+<h1>This page will redirect out of the svelte website in the actual portfolio</h1>
 
 <a href="/">HOME</a>
-<a href="/art">ART</a>
-<a href="/animation">ANIMATION</a>
-<a href="/games">GAMES</a>
