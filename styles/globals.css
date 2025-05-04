@@ -62,11 +62,11 @@ div.cv {
 }
 
 footer * div#contact * img {
-    content:url("/gallery-closed.png");
+    content:url("./gallery-closed.png");
 }
 
 footer * div#contact:hover * img {
-    content:url("/gallery-open.png");
+    content:url("./gallery-open.png");
 }
 
 div.gallery-links {
@@ -81,11 +81,11 @@ div.gallery-links {
 }
 
 div.gallery * img {
-    content:url("/gallery-closed.png");
+    content:url("./gallery-closed.png");
 }
 
 div.gallery:hover * img {
-    content:url("/gallery-open.png");
+    content:url("./gallery-open.png");
 }
 
 div#gallery-link {

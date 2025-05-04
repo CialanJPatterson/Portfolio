@@ -7,7 +7,7 @@ import './exports-sU0w1uve.js';
 function Game($$payload, $$props) {
   let {
     title = "game",
-    source = "/placeholder.png",
+    source = "./placeholder.png",
     link = "https://ampisbad.itch.io/"
   } = $$props;
   $$payload.out += `<div class="svelte-q2jun9"><button class="svelte-q2jun9"><img${attr("src", `${stringify(base)}${stringify(source)}`)}${attr("alt", title)} style="width:20vh"></button></div>`;

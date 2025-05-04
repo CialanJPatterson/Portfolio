@@ -6,7 +6,7 @@ import './exports-sU0w1uve.js';
 
 function JamGame($$payload, $$props) {
   let {
-    icon = "/placeholder.png",
+    icon = "./placeholder.png",
     altText = "placeholder",
     title = "[SAMPLE] Game",
     link = "https://ampisbad.itch.io",

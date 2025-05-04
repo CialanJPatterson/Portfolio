@@ -8,7 +8,7 @@ function ArtPiece($$payload, $$props) {
   let {
     index = void 0,
     title = "art work",
-    source = "/placeholder.png",
+    source = "./placeholder.png",
     initial_size = "25%",
     size = "25%",
     poppedout = void 0,

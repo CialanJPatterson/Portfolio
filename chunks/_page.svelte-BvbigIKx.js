@@ -25,7 +25,7 @@ function _page($$payload) {
   $$payload.out += `<!----></div> <div id="gallery-small-links">`;
   ImgLink($$payload, {
     title: "PHOTOGRAPHY",
-    icon: "/placeholder.png",
+    icon: "./placeholder.png",
     link: "/gallery",
     size: "13vw",
     targetFontSize: "1.2vw"
