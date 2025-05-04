@@ -1,0 +1,211 @@
+:root {
+    --footer-height:10vh;
+    --footer-icon-width:8vh;
+    --footer-gutters:1vh;
+    --white-text:#f0f8ff80;
+    --page-margins-side:2vw;
+    --bg-colour:#b57878;
+}
+
+body {
+    background-color: var(--bg-colour);
+    text-align: center;
+    overflow:hidden;
+}
+
+footer {
+    z-index:9;
+}
+
+div.home-links {
+    display: inline-flex;
+    max-width:100vw;
+    position:absolute;
+    height:45vh;
+    flex-wrap:wrap;
+    left:5vw;
+    width:86vw;
+    overflow:hidden;
+    background-color: #0005;
+    padding: 5vw 2vw 2vw 2vw;
+}
+
+
+div.home-links > div:first-child {
+    position: absolute;
+    left:2vw;
+    top:5vh;
+}
+
+div.home-links > div:nth-child(2) {
+    position: absolute;
+    right:2vw;
+    top:5vh;
+}
+
+div.home-links > div:nth-child(3) {
+    position: absolute;
+    left:2vw;
+    bottom:2vw;
+}
+
+div.home-links > div:last-child {
+    position: absolute;
+    right:2vw;
+    bottom:2vw;
+}
+
+div.cv {
+    position: absolute;
+    left:40vw;
+    bottom: var(--footer-height);
+}
+
+footer * div#contact * img {
+    content:url("/gallery-closed.png");
+}
+
+footer * div#contact:hover * img {
+    content:url("/gallery-open.png");
+}
+
+div.gallery-links {
+    position:absolute;
+    flex-wrap:wrap;
+    float:left;
+    left:2vw;
+    bottom: var(--footer-height);
+    width:calc(100vw - calc(var(--page-margins-side) * 2));
+    margin:0px;
+    padding:0px;
+}
+
+div.gallery * img {
+    content:url("/gallery-closed.png");
+}
+
+div.gallery:hover * img {
+    content:url("/gallery-open.png");
+}
+
+div#gallery-link {
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    z-index:0;
+}
+
+
+@media (max-width: 1150px){
+    div.gallery-links {
+        height:calc(90vh - var(--footer-height));
+    }
+
+    div#gallery-big-links {
+        display:grid;
+        grid-template-columns:48vw 48vw;
+        position:absolute;
+        top:var(--footer-gutters);
+        width:96vw;
+        height:fit-content;
+        left:0px;
+        margin:0px;
+        margin-bottom:25vh;
+        gap: 0vw;
+    }
+
+    div#gallery-big-links > div {
+        width:48vw;
+    }
+        
+    div#gallery-small-links > div {
+        position:relative;
+        left:0vw;
+    }
+
+    div#gallery-small-links {
+        display:inline-flex;
+        position: absolute;
+        align-items: center;
+        width:70vw;
+        left:15vw;
+        bottom:2vh;
+        min-height:fit-content;
+        z-index:1;
+        gap: 1vw;
+        margin-bottom:4vh;
+    }
+
+    div#gallery-small-links:last-child {
+        position: absolute;
+        right:0px;
+    }
+}
+
+@media (min-width: 1150px) {
+    div.gallery-links {
+        position:absolute;
+        left:var(--page-margins-side);
+        display: inline-flex;
+        height:fit-content;
+        width: calc(100vw - calc(var(--page-margins-side) * 2));
+    }
+
+    div#gallery-big-links {
+        display:inline-flex;
+        position:relative;
+        align-items:center;
+        gap: 0vw;
+        width:70vw;
+        margin-bottom: 5vh;
+        height:fit-content;
+    }
+
+    div#gallery-big-links > div {
+        position:relative;
+    }
+
+    div#gallery-big-links > div:first-child{
+        padding-right:6.5vw;
+        border-right: 1vw solid var(--white-text);
+    }
+
+    div#gallery-big-links > div:last-child {
+        padding-left:6.5vw;
+        position: absolute;
+        right:0px;
+    }
+
+    div#gallery-small-links > div {
+        position:relative;
+        left:0vw;
+    }
+
+    div#gallery-small-links {
+        display:inline-flex;
+        position: relative;
+        align-items: center;
+        gap: 6vw;
+        width:70vw;
+        bottom:2vh;
+        min-height:fit-content;
+        z-index:1;
+    }
+
+    div#gallery-small-links:last-child {
+        position: absolute;
+        right:0px;
+    }
+
+
+    div.gallery {
+        width:fit-content;
+        height:fit-content;
+    }
+
+    div#animation-gallery-link {
+        position: absolute;
+        left: 2vw;
+        bottom: var(--footer-height);
+    }
+}
